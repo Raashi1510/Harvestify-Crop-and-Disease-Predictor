@@ -103,14 +103,20 @@ https://www.heroku.com/
 
 ---
 
-## 📌 requirements.txt Example
+## 📌 requirements.txt
 
 Flask
+
 numpy
+
 pandas
+
 scikit-learn
+
 tensorflow
+
 opencv-python
+
 Pillow
 
 ---
@@ -134,6 +140,7 @@ See the [LICENSE](LICENSE) file for details.
 
 Raashi Gada  
 GitHub: https://github.com/Raashi1510
+
 
 
 
