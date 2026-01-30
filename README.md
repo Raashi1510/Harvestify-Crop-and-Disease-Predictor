@@ -24,12 +24,19 @@ The application is built using Flask and ML models trained on agricultural datas
 Harvestify-Crop-and-Disease-Predictor/
 │
 ├── app.py                  # Main Flask application
+
 ├── train_model.py          # ML model training script
+
 ├── models/                 # Saved trained models
+
 ├── static/                 # CSS, JS, images
+
 ├── templates/              # HTML templates
+
 ├── requirements.txt        # Project dependencies
+
 ├── README.md               # Project documentation
+
 └── *.jpg                   # Sample crop images
 
 ---
@@ -127,6 +134,7 @@ See the [LICENSE](LICENSE) file for details.
 
 Raashi Gada  
 GitHub: https://github.com/Raashi1510
+
 
 
 
