@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Roadmap - Harvestify</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #10b981;
+            --dark: #0f172a;
+            --gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f8fafc;
+            color: var(--dark);
+        }
+
+        nav {
+            background: var(--dark);
+            padding: 1.5rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .hero-small {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            padding: 4rem 5%;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-small h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-small p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .crop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .crop-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .crop-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .crop-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f1f5f9;
+        }
+
+        .crop-icon {
+            font-size: 3rem;
+        }
+
+        .crop-header h2 {
+            font-size: 1.8rem;
+            color: var(--dark);
+        }
+
+        .crop-steps {
+            list-style: none;
+        }
+
+        .crop-steps li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .crop-steps li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .crop-steps li strong {
+            color: var(--dark);
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 2rem auto;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-small h1 {
+                font-size: 2rem;
+            }
+            .crop-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">🌱 <span>Harvestify</span></div>
+    </nav>
+
+    <div class="hero-small">
+        <h1>📘 Crop Cultivation Roadmap</h1>
+        <p>Comprehensive guides for successful crop cultivation</p>
+    </div>
+
+    <div class="content">
+        <div class="crop-grid">
+            <!-- Rice -->
+            <div class="crop-card">
+                <div class="crop-header">
+                    <div class="crop-icon">🌾</div>
+                    <h2>Rice</h2>
+                </div>
+                <ul class="crop-steps">
+                    <li><strong>Land Preparation:</strong> Ploughing and Puddling for proper water retention</li>
+                    <li><strong>Sowing:</strong> Nursery preparation followed by transplantation</li>
+                    <li><strong>Fertilizers:</strong> Urea, DAP, and Potash application in stages</li>
+                    <li><strong>Irrigation:</strong> Maintain regular water supply throughout growth</li>
+                    <li><strong>Disease Control:</strong> Monitor for Blast and Brown Spot diseases</li>
+                </ul>
+            </div>
+
+            <!-- Maize -->
+            <div class="crop-card">
+                <div class="crop-header">
+                    <div class="crop-icon">🌽</div>
+                    <h2>Maize</h2>
+                </div>
+                <ul class="crop-steps">
+                    <li><strong>Land Preparation:</strong> Create fine tilth soil for optimal growth</li>
+                    <li><strong>Sowing:</strong> Direct seed sowing at proper spacing</li>
+                    <li><strong>Fertilizers:</strong> Apply nitrogen-rich fertilizers at key stages</li>
+                    <li><strong>Irrigation:</strong> Moderate watering schedule throughout season</li>
+                    <li><strong>Pests:</strong> Prevent stem borer and leaf blight infections</li>
+                </ul>
+            </div>
+
+            <!-- Potato -->
+            <div class="crop-card">
+                <div class="crop-header">
+                    <div class="crop-icon">🥔</div>
+                    <h2>Potato</h2>
+                </div>
+                <ul class="crop-steps">
+                    <li><strong>Land Preparation:</strong> Form raised beds for better drainage</li>
+                    <li><strong>Planting:</strong> Use certified healthy tubers for planting</li>
+                    <li><strong>Fertilizers:</strong> Balanced NPK application for tuber development</li>
+                    <li><strong>Irrigation:</strong> Drip irrigation preferred for water efficiency</li>
+                    <li><strong>Disease:</strong> Implement late blight prevention measures</li>
+                </ul>
+            </div>
+
+            <!-- Tomato -->
+            <div class="crop-card">
+                <div class="crop-header">
+                    <div class="crop-icon">🍅</div>
+                    <h2>Tomato</h2>
+                </div>
+                <ul class="crop-steps">
+                    <li><strong>Land Preparation:</strong> Sandy loam soil with good drainage</li>
+                    <li><strong>Planting:</strong> Transplant healthy seedlings at proper spacing</li>
+                    <li><strong>Fertilizers:</strong> Organic manure with supplemental Urea</li>
+                    <li><strong>Irrigation:</strong> Weekly watering schedule, avoid waterlogging</li>
+                    <li><strong>Disease:</strong> Prevent leaf curl and early blight infections</li>
+                </ul>
+            </div>
+
+            <!-- Wheat -->
+            <div class="crop-card">
+                <div class="crop-header">
+                    <div class="crop-icon">🌾</div>
+                    <h2>Wheat</h2>
+                </div>
+                <ul class="crop-steps">
+                    <li><strong>Land Preparation:</strong> Fine tilth with proper leveling</li>
+                    <li><strong>Sowing:</strong> Line sowing method for uniform growth</li>
+                    <li><strong>Fertilizers:</strong> Nitrogen, Phosphorus application in stages</li>
+                    <li><strong>Irrigation:</strong> Critical stages watering (crown root, flowering)</li>
+                    <li><strong>Disease:</strong> Monitor for rust and smut diseases</li>
+                </ul>
+            </div>
+
+            <!-- Cotton -->
+            <div class="crop-card">
+                <div class="crop-header">
+                    <div class="crop-icon">☁️</div>
+                    <h2>Cotton</h2>
+                </div>
+                <ul class="crop-steps">
+                    <li><strong>Land Preparation:</strong> Deep ploughing with organic matter</li>
+                    <li><strong>Sowing:</strong> Drill sowing at recommended depth</li>
+                    <li><strong>Fertilizers:</strong> High potassium for fiber development</li>
+                    <li><strong>Irrigation:</strong> Moderate irrigation, avoid excess moisture</li>
+                    <li><strong>Pests:</strong> Integrated pest management for bollworms</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <a href="/" class="back-btn">🔙 Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

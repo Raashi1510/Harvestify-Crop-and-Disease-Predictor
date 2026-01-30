@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilizer Suggestion</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .box {
+            background: white;
+            padding: 3rem;
+            border-radius: 25px;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: fadeIn 0.7s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        img {
+            width: 250px;
+            margin: 1rem 0;
+            border-radius: 15px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .btn {
+            display: block;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Fertilizer Suggestion</h1>
+
+        {% if recommendation %}
+            <p><b>Crop:</b> {{ crop }}</p>
+            <p><b>Soil Type:</b> {{ soil }}</p>
+            <p style="color:#059669; font-weight:600;">{{ recommendation }}</p>
+
+            {% if soil and soil.lower() == 'clayey' %}
+                <img src="{{ url_for('static', filename='images/clayey.jpg') }}" alt="Clayey Soil">
+                <p>Clayey soil holds water well and is rich in nutrients.</p>
+            {% elif soil and soil.lower() == 'sandy' %}
+                <img src="{{ url_for('static', filename='images/sandy.jpg') }}" alt="Sandy Soil">
+                <p>Sandy soil drains quickly and suits groundnut, carrot, and potato.</p>
+            {% elif soil and soil.lower() == 'loamy' %}
+                <img src="{{ url_for('static', filename='images/loamy.jpg') }}" alt="Loamy Soil">
+                <p>Loamy soil is well-balanced and suitable for most crops.</p>
+            {% elif soil and soil.lower() == 'black' %}
+                <img src="{{ url_for('static', filename='images/black.jpg') }}" alt="Black Soil">
+                <p>Black soil retains moisture — ideal for cotton and cereals.</p>
+            {% elif soil and soil.lower() == 'red' %}
+                <img src="{{ url_for('static', filename='images/red.jpg') }}" alt="Red Soil">
+                <p>Red soil is best for pulses and millets with proper fertilization.</p>
+            {% endif %}
+
+            <a href="https://www.amazon.in/s?k=fertilizer" target="_blank" class="btn">🛒 Purchase Fertilizer</a>
+            <a href="/" class="btn">🔙 Go Back Home</a>
+        {% else %}
+            <p>No data received. Please go back and try again.</p>
+            <a href="/" class="btn">Go Home</a>
+        {% endif %}
+    </div>
+    <form id="fertilizerForm">
+<!-- your soil + crop inputs -->
+</form>
+<div id="fertilizerRecommendations" class="feature-grid" style="margin-top:2rem;"></div>
+</body>
+</html>

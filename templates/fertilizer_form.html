@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Soil & Crop</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .container {
+            background: white;
+            border-radius: 25px;
+            padding: 2rem;
+            max-width: 900px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: fadeIn 0.6s ease;
+            text-align: center;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1 {
+            color: #0f172a;
+            margin-bottom: 1.5rem;
+        }
+        .soil-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            width: 100%;
+        }
+        .soil-option {
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            padding: 1rem;
+            background: #f8fafc;
+            transition: 0.3s;
+        }
+        .soil-option:hover { border-color: #10b981; transform: translateY(-4px); }
+        .soil-option input { display: none; }
+        .soil-option img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 0.5rem;
+        }
+        .soil-option label {
+            font-weight: 600;
+            color: #0f172a;
+            display: block;
+        }
+        .desc {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 0.3rem;
+            line-height: 1.3;
+        }
+        input[type="text"] {
+            padding: 0.7rem;
+            width: 60%;
+            border-radius: 10px;
+            border: 1px solid #cbd5e1;
+            outline: none;
+            margin-top: 1rem;
+        }
+        button {
+            margin-top: 1.5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover { transform: translateY(-2px); }
+        a {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #059669;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌱 Select Soil Type and Crop</h1>
+        <form action="/fertilizer" method="POST">
+            <div class="soil-options">
+                <div class="soil-option">
+                    <input type="radio" id="clayey" name="soil" value="Clayey" required>
+                    <label for="clayey">
+                        <img src="{{ url_for('static', filename='images/clayey.jpg') }}" alt="Clayey Soil">Clayey
+                    </label>
+                    <div class="desc">Clayey soil holds water well and is rich in nutrients. Suitable for crops like rice and wheat.</div>
+                </div>
+                <div class="soil-option">
+                    <input type="radio" id="sandy" name="soil" value="Sandy">
+                    <label for="sandy">
+                        <img src="{{ url_for('static', filename='images/sandy.jpg') }}" alt="Sandy Soil">Sandy
+                    </label>
+                    <div class="desc">Sandy soil drains quickly and is ideal for crops like groundnut, carrot, and potato.</div>
+                </div>
+                <div class="soil-option">
+                    <input type="radio" id="loamy" name="soil" value="Loamy">
+                    <label for="loamy">
+                        <img src="{{ url_for('static', filename='images/loamy.jpg') }}" alt="Loamy Soil">Loamy
+                    </label>
+                    <div class="desc">Loamy soil is fertile and well-balanced. Great for pulses, sugarcane, and vegetables.</div>
+                </div>
+                <div class="soil-option">
+                    <input type="radio" id="black" name="soil" value="Black">
+                    <label for="black">
+                        <img src="{{ url_for('static', filename='images/black.jpg') }}" alt="Black Soil">Black
+                    </label>
+                    <div class="desc">Black soil retains moisture and suits cotton, soybean, and cereals.</div>
+                </div>
+                <div class="soil-option">
+                    <input type="radio" id="red" name="soil" value="Red">
+                    <label for="red">
+                        <img src="{{ url_for('static', filename='images/red.jpg') }}" alt="Red Soil">Red
+                    </label>
+                    <div class="desc">Red soil is suitable for millets, pulses, and paddy with proper fertilization.</div>
+                </div>
+            </div>
+
+            <input type="text" name="crop" placeholder="Enter Crop Name" required>
+            <button type="submit">🌾 Recommend Fertilizer</button>
+        </form>
+        <a href="/">🔙 Back to Home</a>
+    </div>
+</body>
+</html>
