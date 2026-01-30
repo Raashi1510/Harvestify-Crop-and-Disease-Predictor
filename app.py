@@ -5,6 +5,9 @@ import os
 import json
 
 app = Flask(__name__)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=True)
+
 
 # ------------------- Crop Model -------------------
 model = pickle.load(open('models/crop_model.pkl', 'rb'))
