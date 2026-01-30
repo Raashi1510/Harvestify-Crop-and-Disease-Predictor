@@ -49,6 +49,7 @@ Harvestify-Crop-and-Disease-Predictor/
 ### 1️⃣ Clone the Repository
 
 git clone https://github.com/Raashi1510/Harvestify-Crop-and-Disease-Predictor.git
+
 cd Harvestify-Crop-and-Disease-Predictor
 
 ### 2️⃣ Create Virtual Environment (Optional but Recommended)
@@ -126,6 +127,7 @@ See the [LICENSE](LICENSE) file for details.
 
 Raashi Gada  
 GitHub: https://github.com/Raashi1510
+
 
 
 
